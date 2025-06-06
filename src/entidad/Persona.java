@@ -54,6 +54,10 @@ public abstract class Persona {
     public void setContraseña(String contrasena) {
         this.contraseña = contrasena;
     }
+    
+    public boolean entidadJugable() {
+        return false;
+    }
         
         
 
