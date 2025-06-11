@@ -1,23 +1,34 @@
 package estudio;
 
 import acciones.Calculable;
+import Juego.iJugable;
 import entidad.Alumno;
+import seguimiento.Registro;
+import java.util.Collection;
+import estudio.Contenido;
 import java.util.List;
 
-public abstract class Curso implements Calculable {
+public abstract class Curso implements Calculable, iJugable {
 
 	private String nombre;
-
 	private String tema;
-
 	private int sesionesPorSemana;
-
 	private String contenido;
+	private Alumno alumno;
+	private Registro registro;
+	// private Collection<Tema> tema; ?
+	// private Contenido contenido; ---- Esto ya lo definiste arriba
 
+	/**
+	 *  
+	 */
 	public void agregarAlumno(Alumno a) {
 
 	}
 
+	/**
+	 *  
+	 */
 	public void eliminarAlumno(String id) {
 
 	}
