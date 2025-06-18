@@ -1,0 +1,7 @@
+Usuario: MAIKOLCAS
+Contraseña: 78945612
+Nombres: Michael Jhon
+Apellidos: Castillo Chinchay
+DNI: 78932165
+Correo: maikol_cas@gmail.xom
+Grado: 5

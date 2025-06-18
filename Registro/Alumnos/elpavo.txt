@@ -1,0 +1,7 @@
+Usuario: elpavo
+Contraseña: 78945612
+Nombres: Rodrigo
+Apellidos: Carrasco
+DNI: 86579634
+Correo: rodrigo_elpavo@gmail.com
+Grado: 3

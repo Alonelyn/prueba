@@ -1,0 +1,7 @@
+Usuario: Jose_Men
+Contraseña: 12345678
+Nombres: José Alexander
+Apellidos: Mendoza Sarmiento
+DNI: 72526697
+Correo: jose26m04@gmail.com
+Grado: 6
