@@ -4,36 +4,55 @@
  */
 package seguimiento;
 
+import Interfaces.Acumulador;
+import Juego.Juego;
+import java.util.List;
+
 /**
  *
  * @author JOSE
  */
-public class Puntajes {
+public class Puntajes implements Acumulador{
     private int puntajeTotal;
-    /**private List<Integer> historialPuntaje;*/
 
-    public Puntajes(int puntajeTotal /*,List historialPuntaje*/) {
-        this.puntajeTotal = puntajeTotal;
-        /*this.historialPuntaje = historialPuntaje;*/
+	private List<Integer> historialPuntaje;
+
+	private Respuesta respuesta;
+
+	private Juego juego;
+
+
+	/**
+	 * @see entidad.Acumulador#acumularPuntajes()
+	 * 
+	 *  
+	 */
+	public void acumularPuntajes() {
+
+	}
+
+
+	/**
+	 * @see entidad.Acumulador#guardarPuntajes(int)
+	 * 
+	 *  
+	 */
+	public void guardarPuntajes(int puntos) {
+
+	}
+
+
+	/**
+	 * @see entidad.Acumulador#reiniciarPuntaje()
+	 * 
+	 *  
+	 */
+	public void reiniciarPuntaje() {
+
+	}
+        @Override
+        public int obtenerPuntaje() {
+        return puntajeTotal; 
     }
-
-    public int getPuntajeTotal() {
-        return puntajeTotal;
-    }
-
-    public void setPuntajeTotal(int puntajeTotal) {
-        this.puntajeTotal = puntajeTotal;
-    }
-
-    /*public List getHistorialPuntaje() {
-        return historialPuntaje;
-    }
-
-    public void setHistorialPuntaje(List historialPuntaje) {
-        this.historialPuntaje = historialPuntaje;
-    }*/
-    
-    
-    
     
 }
