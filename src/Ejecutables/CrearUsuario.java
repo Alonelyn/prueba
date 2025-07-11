@@ -12,6 +12,8 @@ import java.io.IOException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+
+
 /**
  *
  * @author Micha
@@ -57,11 +59,11 @@ public class CrearUsuario extends javax.swing.JFrame {
         if (txtDni.getText().length() != 8 || !txtDni.getText().matches("\\d{8}")) {
             JOptionPane.showMessageDialog(this, "El DNI debe tener exactamente 8 dígitos.");
             return false;
-        }
+        }/*
         if (txtPassword.getText().length() != 8 || !txtPassword.getText().matches("\\d{8}")) {
             JOptionPane.showMessageDialog(this, "La contraseña debe tener exactamente 8 dígitos.");
             return false;
-        }
+        }*/
         // Validar correo
         if (!esCorreoValido(correo)) {
             JOptionPane.showMessageDialog(this, "El correo ingresado no es válido.");
@@ -405,12 +407,9 @@ public class CrearUsuario extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
+    /*
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -428,17 +427,12 @@ public class CrearUsuario extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(CrearUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new CrearUsuario().setVisible(true);
             }
         });
-    }
+    }*/
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Title;

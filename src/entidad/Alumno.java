@@ -1,5 +1,6 @@
 package entidad;
 
+import acciones.Calculable;
 import java.util.List;
 import estudio.Curso;
 import seguimiento.*;
@@ -43,7 +44,13 @@ public class Alumno extends Persona {
 	}
 
 	public double obtenerPromedio() {
-		return 0;
+            if (notas.isEmpty()) return 0;
+        double suma = 0;
+        for (double nota : notas) {
+            suma += nota;
+        }
+        return suma / notas.size();
+		//return 0;
 	}
 
 }

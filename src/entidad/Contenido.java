@@ -5,6 +5,7 @@
 package entidad;
 
 import java.util.List;
+import estudio.Curso;
 /**
  *
  * @author JOSE
@@ -13,6 +14,7 @@ public class Contenido {
     
     private String descripcion;
     private List<String> unidades;
+    private Curso curso;
 
     public Contenido(String descripcion, List<String> unidades) {
         this.descripcion = descripcion;

@@ -12,6 +12,12 @@ import entidad.*;
  * @author Micha
  */
 public class Bitacora extends javax.swing.JFrame {
+    
+    // Variables para almacenar las selecciones
+    private String nivelAcademico = "";
+    private String dificultad = "";
+    private String area = "";
+    private String curso = "";
 
     /**
      * Creates new form Bitacora
@@ -45,6 +51,41 @@ public class Bitacora extends javax.swing.JFrame {
         lblArea.setText("");
     }
     
+    // Método para obtener áreas según el nivel académico
+    private String[] obtenerAreasPorNivel(String nivel) {
+        if ("Primaria".equals(nivel)) {
+            return new String[]{"Matemáticas", "Ciencias Naturales", "Lenguaje", "Estudios Sociales"};
+        } else { // Secundaria
+            return new String[]{"Matemáticas", "Ciencias", "Letras"};
+        }
+    }
+    
+    // Método para obtener cursos según área y nivel
+    private String[] obtenerCursosPorAreaYNivel(String area, String nivel) {
+        if ("Primaria".equals(nivel)) {
+            switch (area) {
+                case "Matemáticas":
+                    return new String[]{"Números y Operaciones", "Geometría Básica", "Medidas y Tiempo"};
+                case "Ciencias Naturales":
+                    return new String[]{"Los Seres Vivos", "El Cuerpo Humano", "La Naturaleza"};
+                case "Lenguaje":
+                    return new String[]{"Lectura y Comprensión", "Gramática Básica", "Escritura Creativa"};
+                case "Estudios Sociales":
+                    return new String[]{"Mi Comunidad", "Historia Patria", "Geografía Nacional"};
+            }
+        } else { // Secundaria
+            switch (area) {
+                case "Matemáticas":
+                    return new String[]{"Aritmética", "Álgebra", "Geometría", "Razonamiento Matemático"};
+                case "Ciencias":
+                    return new String[]{"Anatomía", "Biología", "Química"};
+                case "Letras":
+                    return new String[]{"Comunicación", "Literatura", "Razonamiento Verbal"};
+            }
+        }
+        return new String[]{"Curso General"};
+    }
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -62,7 +103,7 @@ public class Bitacora extends javax.swing.JFrame {
         lblNivelAcademico = new javax.swing.JLabel();
         btnDificultad = new javax.swing.JButton();
         btnNivelAcademico = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btnPerfil = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -169,14 +210,14 @@ public class Bitacora extends javax.swing.JFrame {
 
         contenedor.add(pnlPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 160, 200));
 
-        jButton3.setText("Perfil de estudiante");
-        jButton3.setFocusable(false);
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btnPerfil.setText("Perfil de estudiante");
+        btnPerfil.setFocusable(false);
+        btnPerfil.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btnPerfilActionPerformed(evt);
             }
         });
-        contenedor.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 150, 30));
+        contenedor.add(btnPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 150, 30));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Materia"));
@@ -248,99 +289,97 @@ public class Bitacora extends javax.swing.JFrame {
     }//GEN-LAST:event_TitleMousePressed
 
     private void btnNivelAcademicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNivelAcademicoActionPerformed
-        String [] seleccion = {"Primaria", "Secundaria"};
+        String[] seleccion = {"Primaria", "Secundaria"};
         
-        int opcion = JOptionPane.showOptionDialog(null, "Selecciona tu nivel escolar", "Selección", 0, JOptionPane.QUESTION_MESSAGE, null, seleccion, "");
+        int opcion = JOptionPane.showOptionDialog(null, "Selecciona tu nivel escolar", "Nivel Académico", 0, JOptionPane.QUESTION_MESSAGE, null, seleccion, "");
         switch (opcion) {
-            case 0 -> lblNivelAcademico.setText(seleccion[0]);
-            case 1 -> lblNivelAcademico.setText(seleccion[1]);
-            case 2 -> lblNivelAcademico.setText(seleccion[2]);
+            case 0 -> {
+                nivelAcademico = seleccion[0];
+                lblNivelAcademico.setText(seleccion[0]);
+                // Reset área y curso cuando cambia el nivel
+                area = "";
+                curso = "";
+                lblArea.setText("No seleccionada");
+                lblCurso.setText("No seleccionado");
+            }
+            case 1 -> {
+                nivelAcademico = seleccion[1];
+                lblNivelAcademico.setText(seleccion[1]);
+                // Reset área y curso cuando cambia el nivel
+                area = "";
+                curso = "";
+                lblArea.setText("No seleccionada");
+                lblCurso.setText("No seleccionado");
+            }
         }
-        /*
-        if (opcion == 0) {
-            lblNivelAcademico.setText(seleccion[0]);
-        } else if (opcion == 1) {
-            lblNivelAcademico.setText(seleccion[1]);
-        }*/
+        //verificarConfiguracionCompleta();
     }//GEN-LAST:event_btnNivelAcademicoActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void btnPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPerfilActionPerformed
         Perfil pc = new Perfil();
         pc.setVisible(true);
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_btnPerfilActionPerformed
 
     private void btnDificultadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDificultadActionPerformed
-        String [] dificultad = {"Facil","Normal","Avanzado"};
+        String[] dificultadOp = {"Fácil", "Normal", "Avanzado"};
         
-        int opcion = JOptionPane.showOptionDialog(null, "Selecciona tu nivel escolar", "Selección", 0, JOptionPane.QUESTION_MESSAGE, null, dificultad, "");
-        switch (opcion) {
-            case 0 -> lblDificultad.setText(dificultad[0]);
-            case 1 -> lblDificultad.setText(dificultad[1]);
-            case 2 -> lblDificultad.setText(dificultad[2]);
+        int nivel = JOptionPane.showOptionDialog(null, "Selecciona tu nivel de dificultad", "Dificultad", 0, JOptionPane.QUESTION_MESSAGE, null, dificultadOp, "");
+        switch (nivel) {
+            case 0 -> {
+                dificultad = dificultadOp[0];
+                lblDificultad.setText(dificultadOp[0]);
+            }
+            case 1 -> {
+                dificultad = dificultadOp[1];
+                lblDificultad.setText(dificultadOp[1]);
+            }
+            case 2 -> {
+                dificultad = dificultadOp[2];
+                lblDificultad.setText(dificultadOp[2]);
+            }
         }
     }//GEN-LAST:event_btnDificultadActionPerformed
 
     private void btnMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMateriaActionPerformed
-        String [] Materia = {"Ciencias", "Letras", "Matemática"};
-        String [] Ciencias = {"Anatomia", "Biología", "Química"};
-        String [] Letras = {"Comunicación", "Literatura", "Razonamiento Verbal"};
-        String [] Matematica = {"Aritmética", "Álgebra", "Geometria", "Razonamiento Matemático"};
         
-        int materia = JOptionPane.showOptionDialog(null, "Para empezar, selecciona tu materia con la que empezaremos hoy", "Seleccion", 0, JOptionPane.QUESTION_MESSAGE, null, Materia, "");
-        switch (materia){
-            case 0 -> lblArea.setText(Materia[0]);
-            case 1 -> lblArea.setText(Materia[1]);
-            case 2 -> lblArea.setText(Materia[2]);
-            }
+        if (nivelAcademico.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Primero selecciona el nivel académico", "Advertencia", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
         
-        switch (materia) {
-            case 0 -> {
-                // Si la materia [0] que es Ciencias fue seleccionada, abre paso a elegir uno de sus cursos hijos.
-                int ciencias = JOptionPane.showOptionDialog(null, "Para empezar, selecciona tu materia con la que empezaremos hoy", "Seleccion", 0, JOptionPane.QUESTION_MESSAGE, null, Ciencias, "");
-                switch (ciencias) {
-                    case 0 -> lblCurso.setText(Ciencias[0]);
-                    case 1 -> lblCurso.setText(Ciencias[1]);
-                    case 2 -> lblCurso.setText(Ciencias[2]);
-                }
-            }
-            case 1 -> {
-                // Si la materia [1] que es Ciencias fue seleccionada, abre paso a elegir uno de sus cursos hijos.
-                int letras = JOptionPane.showOptionDialog(null, "Para empezar, selecciona tu materia con la que empezaremos hoy", "Seleccion", 0, JOptionPane.QUESTION_MESSAGE, null, Letras, "");
-                switch (letras) {
-                    case 0 -> lblCurso.setText(Letras[0]);
-                    case 1 -> lblCurso.setText(Letras[1]);
-                    case 2 -> lblCurso.setText(Letras[2]);
-                }
-            }
-            case 2 -> {
-                int matematica = JOptionPane.showOptionDialog(null, "Para empezar, selecciona tu materia con la que empezaremos hoy", "Seleccion", 0, JOptionPane.QUESTION_MESSAGE, null, Matematica, "");
-                switch (matematica) {
-                    case 0 -> lblCurso.setText(Matematica[0]);
-                    case 1 -> lblCurso.setText(Matematica[1]);
-                    case 2 -> lblCurso.setText(Matematica[2]);
-                    case 3 -> lblCurso.setText(Matematica[3]);
-                }
-            }
-            default -> {
+        String[] areas = obtenerAreasPorNivel(nivelAcademico);
+        
+        int materiaIndex = JOptionPane.showOptionDialog(null, "Selecciona tu área de estudio", "Área de Estudio", 0, JOptionPane.QUESTION_MESSAGE, null, areas, "");
+        
+        if (materiaIndex >= 0 && materiaIndex < areas.length) {
+            area = areas[materiaIndex];
+            lblArea.setText(area);
+            
+            // Ahora seleccionar el curso
+            String[] cursos = obtenerCursosPorAreaYNivel(area, nivelAcademico);
+            int cursoIndex = JOptionPane.showOptionDialog(null, "Selecciona tu curso", "Curso", 0, JOptionPane.QUESTION_MESSAGE, null, cursos, "");
+            
+            if (cursoIndex >= 0 && cursoIndex < cursos.length) {
+                curso = cursos[cursoIndex];
+                lblCurso.setText(curso);
             }
         }
+        
+        
     }//GEN-LAST:event_btnMateriaActionPerformed
 
     private void btnEmpezarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmpezarActionPerformed
-        Jugable pc= new Jugable();
+        Jugable pc= new Jugable(nivelAcademico, dificultad, area, curso);
         pc.setVisible(true);
+        this.setVisible(false);
         
     }//GEN-LAST:event_btnEmpezarActionPerformed
 
     /**
      * @param args the command line arguments
-     */
+     *//*
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -358,15 +397,12 @@ public class Bitacora extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Bitacora.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Bitacora().setVisible(true);
             }
         });
-    }
+    }*/
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Title;
@@ -374,9 +410,9 @@ public class Bitacora extends javax.swing.JFrame {
     private javax.swing.JButton btnEmpezar;
     private javax.swing.JButton btnMateria;
     private javax.swing.JButton btnNivelAcademico;
+    private javax.swing.JButton btnPerfil;
     private javax.swing.JPanel contenedor;
     private javax.swing.JLabel exit;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

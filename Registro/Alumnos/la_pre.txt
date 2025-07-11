@@ -1,0 +1,7 @@
+Usuario: la_pre
+Contraseña: lavida2023
+Nombres: Jams
+Apellidos: Gutierrez
+DNI: 86459832
+Correo: gutierrez_jams@tup.edu.pe
+Grado: 0

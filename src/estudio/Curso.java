@@ -3,75 +3,54 @@ package estudio;
 import acciones.Calculable;
 import entidad.Alumno;
 import java.util.List;
+import Utilitario.*;
+import Dificultad.*;
+
+import java.util.*;
 
 public abstract class Curso implements Calculable {
 
-	private String nombre;
+    private String nombre;
+    private String tema;
+    private int sesionesPorSemana;
+    private String contenido;
 
-	private String tema;
+    // Nuevos atributos
+    protected List<Pregunta> preguntas; // Lista de preguntas del curso
+    public Dificultad dificultad; // Dificultad del curso
+    private int cantidadPreguntas = 10; // Por defecto 10 preguntas
 
-	private int sesionesPorSemana;
+    public Curso(String nombre, String tema){
+        this.nombre = nombre;
+        this.tema = tema;
+        this.preguntas = new ArrayList<>();
+    }
+    
+    public Curso(String nombre, String tema, Dificultad dificultad) {
+        this(nombre,tema);
+        this.dificultad = dificultad;
+    }
+    
 
-	private String contenido;
+    // Método para cargar preguntas específicas (debe ser implementado en subclases)
+    public abstract void cargarPreguntas();
 
-	public void agregarAlumno(Alumno a) {
+    // Método para obtener preguntas aleatorias
+    public List<Pregunta> getPreguntasAleatorias(int cantidad) {
+        Collections.shuffle(preguntas);
+        return preguntas.size() > cantidad ? preguntas.subList(0, cantidad) : new ArrayList<>(preguntas);
+    }
 
-	}
+    // Getters y setters
+    public String getNombre() {
+        return nombre;
+    }
 
-	public void eliminarAlumno(String id) {
+    public void setDificultad(Dificultad dificultad) {
+        this.dificultad = dificultad;
+    }
 
-	}
-
-	public List<Alumno> listarAlumnos() {
-		return null;
-	}
-
-	public String mostrarContenido() {
-		return null;
-	}
-
-
-	/**
-	 * @see acciones.Calculable#calcularNotaIndividual(entidad.Alumno)
-	 * 
-	 *  
-	 */
-	public double calcularNotaIndividual(Alumno alumno) {
-		return 0;
-	}
-
-
-	/**
-	 * @see acciones.Calculable#calcularPromedio()
-	 * 
-	 *  
-	 */
-	public double calcularPromedio() {
-		return 0;
-	}
-
-
-	/**
-	 * @see acciones.Calculable#calcularMaximaNota()
-	 */
-	public double calcularMaximaNota() {
-		return 0;
-	}
-
-
-	/**
-	 * @see acciones.Calculable#calcularMinimaNota()
-	 */
-	public double calcularMinimaNota() {
-		return 0;
-	}
-
-
-	/**
-	 * @see acciones.Calculable#listarNotas()
-	 */
-	public List<Double> listarNotas() {
-		return null;
-	}
-
+    public Dificultad getDificultad() {
+        return dificultad;
+    }
 }

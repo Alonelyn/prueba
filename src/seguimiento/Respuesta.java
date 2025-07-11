@@ -1,32 +1,26 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package seguimiento;
+import Interfaces.Verificador;
 
-/**
- *
- * @author JOSE
- */
-public class Respuesta {
-    
-     private boolean esCorrecta;
+public class Respuesta implements Verificador {
 
-    public Respuesta(boolean esCorrecta) {
-        this.esCorrecta = esCorrecta;
-    }
+	private Puntajes puntajes;
 
-    public boolean isEsCorrecta() {
-        return esCorrecta;
-    }
 
-    public void setEsCorrecta(boolean esCorrecta) {
-        this.esCorrecta = esCorrecta;
-    }
-    
-    // Method
-    public boolean verificarRespuestas() {
-        return esCorrecta;
-    }
-     
+	/**
+	 *  
+	 */
+	public boolean verificarRespuestas() {
+		return false;
+	}
+
+
+	/**
+	 * @see entidad.Verificador#respuestaCorrecta()
+	 * 
+	 *  
+	 */
+	public void respuestaCorrecta() {
+
+	}
+
 }

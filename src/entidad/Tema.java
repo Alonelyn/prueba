@@ -5,6 +5,7 @@
 package entidad;
 
 import enumeraciones.Categoria;
+import estudio.Curso;
 
 /**
  *
@@ -14,10 +15,12 @@ public class Tema {
     
     private String nombre;
     private Categoria categoria;
+    private Curso curso; 
 
-    public Tema(String nombre, Categoria categoria) {
+    public Tema(String nombre, Categoria categoria, Curso curso) {
         this.nombre = nombre;
         this.categoria = categoria;
+        this.curso = curso;
     }
 
     public String getNombre() {
@@ -35,7 +38,24 @@ public class Tema {
     public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
     }
+
+    public Curso getCurso() {
+        return curso;
+    }
+
+    public void setCurso(Curso curso) {
+        this.curso = curso;
+    }
     
+    
+    @Override
+    public String toString() {
+        return "Tema{" +
+                "nombre='" + nombre + '\'' +
+                ", categoria=" + categoria +
+                ", curso=" + curso +
+                '}';
+    }
     
     
 }

@@ -3,13 +3,12 @@ package Ejecutables;
 
 // Imports para DB
 
-/*
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import javax.swing.JOptionPane;}
-*/ //Detalles previos
+import javax.swing.JOptionPane;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;

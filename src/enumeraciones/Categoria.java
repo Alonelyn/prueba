@@ -4,10 +4,6 @@
  */
 package enumeraciones;
 
-/**
- *
- * @author JOSE
- */
 public enum Categoria {
     LETRAS,
     CIENCIAS,
