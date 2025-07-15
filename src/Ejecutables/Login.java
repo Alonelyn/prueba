@@ -4,6 +4,8 @@ package Ejecutables;
 // Imports para DB
 
 
+import Formularios.Bitacora;
+import Formularios.CrearUsuario;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;

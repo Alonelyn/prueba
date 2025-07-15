@@ -7,6 +7,6 @@ package enumeraciones;
 public enum Categoria {
     LETRAS,
     CIENCIAS,
-    MATEMATICAS
+    MATEMATICAS;
     
 }

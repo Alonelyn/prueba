@@ -1,0 +1,7 @@
+Usuario: chango
+Contraseña: 12345678
+Nombres: Jose
+Apellidos: Mendoza
+DNI: 12345678
+Correo: changopaquemas@gmail.com
+Grado: 1

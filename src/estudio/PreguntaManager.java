@@ -4,7 +4,6 @@
  */
 package estudio;
 
-import Utilitario.Pregunta;
 import java.util.*;
 
 /**
@@ -87,11 +86,34 @@ public class PreguntaManager {
         baseDePreguntas.get(nivel).get(area).put(curso, preguntas);
     }
 
-    public List<Pregunta> getPreguntas(String nivel, String area, String curso) {
-        List<Pregunta> lista = baseDePreguntas
-            .getOrDefault(nivel, Collections.emptyMap())
-            .getOrDefault(area, Collections.emptyMap())
-            .getOrDefault(curso, new ArrayList<>());
+    public List<Pregunta> getPreguntas(String nivel,  String area, String curso) {
+        List<Pregunta> lista = baseDePreguntas.getOrDefault(nivel, Collections.emptyMap())
+                .getOrDefault(area, Collections.emptyMap())
+                .getOrDefault(curso, new ArrayList<>());
+
+        if (!lista.isEmpty()) {
+            List<Pregunta> copia = new ArrayList<>(lista);
+            Collections.shuffle(copia);
+            return copia.size() > 10 ? copia.subList(0, 10) : copia;
+        }
+
+        // Si no encuentra con mayúsculas exactas, busca con equalsIgnoreCase()
+        for (String n : baseDePreguntas.keySet()) {
+            if (n.equalsIgnoreCase(nivel)) {
+                Map<String, Map<String, List<Pregunta>>> areas = baseDePreguntas.get(n);
+                for (String a : areas.keySet()) {
+                    if (a.equalsIgnoreCase(area)) {
+                        Map<String, List<Pregunta>> cursos = areas.get(a);
+                        for (String c : cursos.keySet()) {
+                            if (c.equalsIgnoreCase(curso)) {
+                                lista = cursos.get(c);
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+        }
 
         List<Pregunta> copia = new ArrayList<>(lista);
         Collections.shuffle(copia);

@@ -50,7 +50,7 @@ public class Puntajes implements Acumulador{
 	public void reiniciarPuntaje() {
 
 	}
-        @Override
+        //@Override
         public int obtenerPuntaje() {
         return puntajeTotal; 
     }

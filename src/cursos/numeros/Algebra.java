@@ -5,7 +5,7 @@
 package cursos.numeros;
 
 import Dificultad.Dificultad;
-import Utilitario.Pregunta;
+import estudio.Pregunta;
 import entidad.Alumno;
 import estudio.Curso;
 import java.util.*;

@@ -14,6 +14,12 @@ public class Alumno extends Persona {
     private List<Double> notas;
     private Curso cursoActual;
     private int grado;
+    
+    // Parte del nuevo código para vincular dificultad, grado, area y materia
+    private String nivelAcademico;
+    private String dificultad;
+    private String area;
+    private String curso;
 
 
         // constructor para Alumno en base de Persona [Clase padre]
@@ -50,7 +56,38 @@ public class Alumno extends Persona {
             suma += nota;
         }
         return suma / notas.size();
-		//return 0;
 	}
+        
+        public String getNivelAcademico() {
+            return nivelAcademico;
+        }
+
+        public void setNivelAcademico(String nivelAcademico) {
+            this.nivelAcademico = nivelAcademico;
+        }
+
+        public String getDificultad() {
+            return dificultad;
+        }
+
+        public void setDificultad(String dificultad) {
+            this.dificultad = dificultad;
+        }
+
+        public String getArea() {
+            return area;
+        }
+
+        public void setArea(String area) {
+            this.area = area;
+        }
+
+        public String getCurso() {
+            return curso;
+        }
+
+        public void setCurso(String curso) {
+            this.curso = curso;
+        }
 
 }

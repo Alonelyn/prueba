@@ -6,9 +6,7 @@ package Juego;
 
 import Interfaces.iJugable;
 import java.util.List;
-import seguimiento.Puntajes;
-import seguimiento.Respuesta;
-import Juego.Jugador;
+import seguimiento.*;
 
 /**
  *
@@ -24,8 +22,6 @@ public class Juego implements iJugable {
 	private int rondaActual;
 
 	private Puntajes puntajes;
-
-	private Jugador jugador;
 
 	/**
 	 *  

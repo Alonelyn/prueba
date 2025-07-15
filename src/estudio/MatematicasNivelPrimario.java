@@ -1,7 +1,6 @@
 package estudio;
 
 import Dificultad.Dificultad;
-import Utilitario.Pregunta;
 import entidad.Alumno;
 import acciones.Calculable;
 import Dificultad.*;

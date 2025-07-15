@@ -1,0 +1,7 @@
+Usuario: michael1
+Contraseña: 12345678
+Nombres: Michael
+Apellidos: Castillo
+DNI: 75133800
+Correo: michael10@gmail.com
+Grado: 1

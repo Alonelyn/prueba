@@ -4,6 +4,7 @@
  */
 package Utilitario;
 
+import estudio.Pregunta;
 import java.util.List;
 import Utilitario.*;
 import java.util.ArrayList;

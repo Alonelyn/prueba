@@ -9,7 +9,7 @@ package Interfaces;
  * @author JOSE
  */
 public interface Acumulador {
-    int obtenerPuntaje();
+    //int obtenerPuntaje(); no puede tener atributos las interfaces
     void acumularPuntajes();
     void guardarPuntajes(int puntos);
     void reiniciarPuntaje();

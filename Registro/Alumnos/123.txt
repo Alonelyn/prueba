@@ -1,0 +1,7 @@
+Usuario: 123
+Contraseña: 12345678
+Nombres: 123
+Apellidos: 123
+DNI: 12345678
+Correo: 12354@gmail.com
+Grado: 1

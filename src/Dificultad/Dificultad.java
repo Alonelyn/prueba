@@ -10,6 +10,6 @@ package Dificultad;
  */
 
 public interface Dificultad {
-    int getTiempoBase();
+    int getTiempoBase();//METODOS ABSTRACTOS    
     double getBonusPorcentaje();
 }

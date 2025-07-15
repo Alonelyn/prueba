@@ -3,10 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/onepi/OneDrive/Documentos/NetBeansProjects/prueba-main/prueba-main/src/Utilitario/Verificadores.java</file>
+            <file>file:/C:/Users/onepi/OneDrive/Documentos/NetBeansProjects/prueba-main/prueba-main/src/estudio/Curso.java</file>
+            <file>file:/C:/Users/onepi/OneDrive/Documentos/NetBeansProjects/prueba-main/prueba-main/src/Dificultad/dAvanzado.java</file>
+            <file>file:/C:/Users/onepi/OneDrive/Documentos/NetBeansProjects/prueba-main/prueba-main/src/Dificultad/Dificultad.java</file>
+            <file>file:/C:/Users/onepi/OneDrive/Documentos/NetBeansProjects/prueba-main/prueba-main/src/estudio/PreguntaManager.java</file>
+            <file>file:/C:/Users/onepi/OneDrive/Documentos/NetBeansProjects/prueba-main/prueba-main/src/entidad/Pregunta.java</file>
+            <file>file:/C:/Users/onepi/OneDrive/Documentos/NetBeansProjects/prueba-main/prueba-main/src/Utilitario/Pregunta.java</file>
             <file>file:/C:/Users/onepi/OneDrive/Documentos/NetBeansProjects/prueba-main/prueba-main/src/Ejecutables/Jugable.java</file>
-            <file>file:/C:/Users/onepi/OneDrive/Documentos/NetBeansProjects/prueba-main/prueba-main/src/acciones/PanelRound.java</file>
-            <file>file:/C:/Users/onepi/OneDrive/Documentos/NetBeansProjects/prueba-main/prueba-main/src/Ejecutables/CrearUsuario.java</file>
+            <file>file:/C:/Users/onepi/OneDrive/Documentos/NetBeansProjects/prueba-main/prueba-main/src/cursos/numeros/Algebra.java</file>
+            <file>file:/C:/Users/onepi/OneDrive/Documentos/NetBeansProjects/prueba-main/prueba-main/src/acciones/Calculable.java</file>
+            <file>file:/C:/Users/onepi/OneDrive/Documentos/NetBeansProjects/prueba-main/prueba-main/src/Utilitario/GestorPreguntas.java</file>
+            <file>file:/C:/Users/onepi/OneDrive/Documentos/NetBeansProjects/prueba-main/prueba-main/src/estudio/MatematicasNivelPrimario.java</file>
         </group>
     </open-files>
 </project-private>
