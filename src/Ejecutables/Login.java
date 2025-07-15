@@ -33,7 +33,6 @@ public class Login extends javax.swing.JFrame {
         initComponents();
         jPanel1.requestFocusInWindow();
         this.setLocationRelativeTo(null);
-        txtPassword.setEchoChar('\u25cf');
         
     }
     
@@ -123,8 +122,6 @@ public class Login extends javax.swing.JFrame {
         Title = new javax.swing.JPanel();
         exit = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        IconLog = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         txtUsuario = new javax.swing.JTextField();
         lblPassword = new javax.swing.JLabel();
@@ -184,14 +181,7 @@ public class Login extends javax.swing.JFrame {
         jLabel1.setText("Login");
         Title.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 40, -1, -1));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/home_48px_1.png"))); // NOI18N
-        Title.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 35, -1, 60));
-
         jPanel1.add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 360, 140));
-
-        IconLog.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        IconLog.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/group_52px.png"))); // NOI18N
-        jPanel1.add(IconLog, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 60, 80));
         jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 290, 200, 10));
 
         txtUsuario.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
@@ -278,7 +268,6 @@ public class Login extends javax.swing.JFrame {
             txtPassword.setEchoChar((char)0);
             showPass.setText("Ocultar contraseña");
         } else {
-            txtPassword.setEchoChar('\u25cf');
             showPass.setText("Mostrar contraseña");
         }
     }//GEN-LAST:event_showPassActionPerformed
@@ -298,13 +287,11 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel IconLog;
     private javax.swing.JPanel Title;
     private javax.swing.JButton btnLogin;
     private javax.swing.JLabel exit;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;

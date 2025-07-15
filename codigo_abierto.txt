@@ -1,0 +1,2140 @@
+package acciones;
+public interface Acumulador {// private int obtenerPuntaje;
+	public abstract void acumularPuntajes();
+	public abstract void guardarPuntajes(int puntos);
+	public abstract void reiniciarPuntaje();
+}
+
+package acciones;
+import entidad.Alumno;
+import java.util.List;
+public interface Calculable {
+	public abstract double calcularNotaIndividual(Alumno alumno);
+	public abstract double calcularPromedio();
+	public abstract double calcularMaximaNota();
+	public abstract double calcularMinimaNota();
+	public abstract List<Double> listarNotas();}
+
+package acciones;
+public class LocalDate {}
+
+package acciones;
+import Juego.Juego;
+import java.util.List;
+import acciones.Acumulador;
+public class Puntajes implements Acumulador {
+	private int puntajeTotal;
+	private List<Integer> historialPuntaje;
+	private Respuesta respuesta;
+	private Juego juego;
+	public void acumularPuntajes() {}
+	public void guardarPuntajes(int puntos) {}
+	public void reiniciarPuntaje() {}}
+
+
+package acciones;
+import acciones.Puntajes;
+public class Respuesta implements Verificador {
+	private Puntajes puntajes;
+	public boolean verificarRespuestas() {return false;}
+	public void respuestaCorrecta() {}}
+
+package acciones;
+
+public interface Verificador {public abstract void respuestaCorrecta();}
+
+package Ejecutables;
+import javax.swing.JOptionPane;
+import entidad.*;
+public class Bitacora extends javax.swing.JFrame {
+    public Bitacora() {
+        initComponents();
+        jPanel1.requestFocusInWindow();
+        this.setLocationRelativeTo(null);
+        iniciar();
+        cargarDatos();}
+    private void cargarDatos() {
+        Persona persona = Sesion.getPersonaActual();
+        if (persona instanceof Alumno alumno) {lblAlumno.setText(alumno.getNombre());
+        } else {JOptionPane.showMessageDialog(this, "No hay alumno activo en sesión", "Error", JOptionPane.ERROR_MESSAGE);}}
+
+    private void configurarExit(){exit.setText("X");
+        exit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));}
+    private void iniciar(){lblNivelAcademico.setText("");
+        lblDificultad.setText("");
+        lblCurso.setText("");
+        lblArea.setText("");}
+    
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        jPanel1 = new javax.swing.JPanel();
+        Title = new javax.swing.JPanel();
+        exit = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        lblAlumno = new javax.swing.JLabel();
+        contenedor = new javax.swing.JPanel();
+        pnlPerfil = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        lblDificultad = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        lblNivelAcademico = new javax.swing.JLabel();
+        btnDificultad = new javax.swing.JButton();
+        btnNivelAcademico = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        lblArea = new javax.swing.JLabel();
+        lblCurso = new javax.swing.JLabel();
+        btnMateria = new javax.swing.JButton();
+        btnEmpezar = new javax.swing.JButton();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setFocusable(false);
+        setLocation(new java.awt.Point(0, 0));
+        setMinimumSize(new java.awt.Dimension(400, 400));
+        setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(540, 470));
+        setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setFocusable(false);
+        jPanel1.setMinimumSize(new java.awt.Dimension(540, 430));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        Title.setBackground(new java.awt.Color(31, 199, 136));
+        Title.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        Title.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                TitleMouseDragged(evt);
+            }
+        });
+        Title.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                TitleMousePressed(evt);
+            }
+        });
+        Title.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        exit.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        exit.setForeground(new java.awt.Color(255, 255, 255));
+        exit.setText("X");
+        exit.setToolTipText("");
+        exit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                exitMousePressed(evt);
+            }
+        });
+        Title.add(exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 10, 21, 30));
+
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Bienvenido");
+        Title.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
+
+        lblAlumno.setBackground(new java.awt.Color(255, 255, 255));
+        lblAlumno.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
+        lblAlumno.setForeground(new java.awt.Color(255, 255, 255));
+        lblAlumno.setText("user");
+        Title.add(lblAlumno, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 20, -1, -1));
+
+        jPanel1.add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 540, 80));
+
+        contenedor.setBackground(new java.awt.Color(255, 255, 255));
+        contenedor.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        contenedor.setFocusable(false);
+        contenedor.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        pnlPerfil.setBackground(new java.awt.Color(255, 255, 255));
+        pnlPerfil.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Seleccion", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(0, 0, 0))); // NOI18N
+        pnlPerfil.setForeground(new java.awt.Color(0, 0, 0));
+        pnlPerfil.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel2.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        jLabel2.setText("Nivel:");
+        pnlPerfil.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, -1, -1));
+
+        lblDificultad.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        lblDificultad.setText("Normal");
+        pnlPerfil.add(lblDificultad, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 150, -1, -1));
+
+        jLabel3.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        jLabel3.setText("Dificultad:");
+        pnlPerfil.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, -1, -1));
+
+        lblNivelAcademico.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        lblNivelAcademico.setText("Primaria");
+        pnlPerfil.add(lblNivelAcademico, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, -1, -1));
+
+        btnDificultad.setText("Dificultad");
+        btnDificultad.setFocusable(false);
+        btnDificultad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDificultadActionPerformed(evt);
+            }
+        });
+        pnlPerfil.add(btnDificultad, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 140, 30));
+
+        btnNivelAcademico.setText("Nivel académico");
+        btnNivelAcademico.setFocusable(false);
+        btnNivelAcademico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNivelAcademicoActionPerformed(evt);
+            }
+        });
+        pnlPerfil.add(btnNivelAcademico, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 140, 30));
+
+        contenedor.add(pnlPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 160, 200));
+
+        jButton3.setText("Perfil de estudiante");
+        jButton3.setFocusable(false);
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        contenedor.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 150, 30));
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Materia", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(0, 0, 0))); // NOI18N
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel4.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        jLabel4.setText("Area de estudio: ");
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, -1));
+
+        jLabel5.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        jLabel5.setText("Curso: ");
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, -1));
+
+        lblArea.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        lblArea.setText("Matematica");
+        jPanel2.add(lblArea, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 80, -1, -1));
+
+        lblCurso.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        lblCurso.setText("Curso");
+        jPanel2.add(lblCurso, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 110, -1, -1));
+
+        btnMateria.setText("Selecciona tu materia y curso");
+        btnMateria.setFocusable(false);
+        btnMateria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMateriaActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnMateria, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 240, 30));
+
+        contenedor.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 20, 280, 200));
+
+        btnEmpezar.setText("¿Empezamos la aventura?");
+        btnEmpezar.setFocusable(false);
+        contenedor.add(btnEmpezar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 230, 280, -1));
+
+        jPanel1.add(contenedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 500, 330));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 540, 440));
+
+        getAccessibleContext().setAccessibleName("Bitacora del Viajero");
+
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
+
+    
+    int px, py;
+    
+    private void exitMousePressed(java.awt.event.MouseEvent evt) {
+        JOptionPane.showMessageDialog(this, "Project by José & Michael");
+
+        System.exit(0);
+    }                                 
+    
+    private void TitleMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TitleMouseDragged
+        int x = evt.getXOnScreen();
+        int y = evt.getYOnScreen();
+        this.setLocation(x - px, y - py);
+    }//GEN-LAST:event_TitleMouseDragged
+
+    private void TitleMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TitleMousePressed
+        px = evt.getX();
+        py = evt.getY();
+    }//GEN-LAST:event_TitleMousePressed
+
+    private void btnNivelAcademicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNivelAcademicoActionPerformed
+        String [] seleccion = {"Primaria", "Secundaria"};
+        
+        int opcion = JOptionPane.showOptionDialog(null, "Selecciona tu nivel escolar", "Selección", 0, JOptionPane.QUESTION_MESSAGE, null, seleccion, "");
+        switch (opcion) {
+            case 0 -> lblNivelAcademico.setText(seleccion[0]);
+            case 1 -> lblNivelAcademico.setText(seleccion[1]);
+            case 2 -> lblNivelAcademico.setText(seleccion[2]);
+        }
+        /*
+        if (opcion == 0) {
+            lblNivelAcademico.setText(seleccion[0]);
+        } else if (opcion == 1) {
+            lblNivelAcademico.setText(seleccion[1]);
+        }*/
+    }//GEN-LAST:event_btnNivelAcademicoActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        Perfil pc = new Perfil();
+        pc.setVisible(true);
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void btnDificultadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDificultadActionPerformed
+        String [] dificultad = {"Facil","Normal","Avanzado"};
+        
+        int opcion = JOptionPane.showOptionDialog(null, "Selecciona tu nivel escolar", "Selección", 0, JOptionPane.QUESTION_MESSAGE, null, dificultad, "");
+        switch (opcion) {
+            case 0 -> lblDificultad.setText(dificultad[0]);
+            case 1 -> lblDificultad.setText(dificultad[1]);
+            case 2 -> lblDificultad.setText(dificultad[2]);
+        }
+    }//GEN-LAST:event_btnDificultadActionPerformed
+
+    private void btnMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMateriaActionPerformed
+        String [] Materia = {"Ciencias", "Letras", "Matemática"};
+        String [] Ciencias = {"Anatomia", "Biología", "Química"};
+        String [] Letras = {"Comunicación", "Literatura", "Razonamiento Verbal"};
+        String [] Matematica = {"Aritmética", "Álgebra", "Geometria", "Razonamiento Matemático"};
+        
+        int materia = JOptionPane.showOptionDialog(null, "Para empezar, selecciona tu materia con la que empezaremos hoy", "Seleccion", 0, JOptionPane.QUESTION_MESSAGE, null, Materia, "");
+        switch (materia){
+            case 0 -> lblArea.setText(Materia[0]);
+            case 1 -> lblArea.setText(Materia[1]);
+            case 2 -> lblArea.setText(Materia[2]);
+            }
+        
+        switch (materia) {
+            case 0 -> {
+                // Si la materia [0] que es Ciencias fue seleccionada, abre paso a elegir uno de sus cursos hijos.
+                int ciencias = JOptionPane.showOptionDialog(null, "Para empezar, selecciona tu materia con la que empezaremos hoy", "Seleccion", 0, JOptionPane.QUESTION_MESSAGE, null, Ciencias, "");
+                switch (ciencias) {
+                    case 0 -> lblCurso.setText(Ciencias[0]);
+                    case 1 -> lblCurso.setText(Ciencias[1]);
+                    case 2 -> lblCurso.setText(Ciencias[2]);
+                }
+            }
+            case 1 -> {
+                // Si la materia [1] que es Ciencias fue seleccionada, abre paso a elegir uno de sus cursos hijos.
+                int letras = JOptionPane.showOptionDialog(null, "Para empezar, selecciona tu materia con la que empezaremos hoy", "Seleccion", 0, JOptionPane.QUESTION_MESSAGE, null, Letras, "");
+                switch (letras) {
+                    case 0 -> lblCurso.setText(Letras[0]);
+                    case 1 -> lblCurso.setText(Letras[1]);
+                    case 2 -> lblCurso.setText(Letras[2]);
+                }
+            }
+            case 2 -> {
+                int matematica = JOptionPane.showOptionDialog(null, "Para empezar, selecciona tu materia con la que empezaremos hoy", "Seleccion", 0, JOptionPane.QUESTION_MESSAGE, null, Matematica, "");
+                switch (matematica) {
+                    case 0 -> lblCurso.setText(Matematica[0]);
+                    case 1 -> lblCurso.setText(Matematica[1]);
+                    case 2 -> lblCurso.setText(Matematica[2]);
+                    case 3 -> lblCurso.setText(Matematica[3]);
+                }
+            }
+            default -> {
+            }
+        }
+    }//GEN-LAST:event_btnMateriaActionPerformed
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(Bitacora.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Bitacora.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Bitacora.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Bitacora.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Bitacora().setVisible(true);
+            }
+        });
+    }
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel Title;
+    private javax.swing.JButton btnDificultad;
+    private javax.swing.JButton btnEmpezar;
+    private javax.swing.JButton btnMateria;
+    private javax.swing.JButton btnNivelAcademico;
+    private javax.swing.JPanel contenedor;
+    private javax.swing.JLabel exit;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel lblAlumno;
+    private javax.swing.JLabel lblArea;
+    private javax.swing.JLabel lblCurso;
+    private javax.swing.JLabel lblDificultad;
+    private javax.swing.JLabel lblNivelAcademico;
+    private javax.swing.JPanel pnlPerfil;
+    // End of variables declaration//GEN-END:variables
+}
+
+
+package Ejecutables;
+
+import entidad.*;
+import javax.swing.JOptionPane;
+import java.awt.event.MouseEvent;
+import javax.swing.*;
+import java.awt.*;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+/**
+ *
+ * @author Micha
+ */
+public class CrearUsuario extends javax.swing.JFrame {
+
+    
+    public CrearUsuario() {
+        initComponents();
+        this.setLocationRelativeTo(null);
+        btnCompletar.setEnabled(false);
+        habilitarBoton();
+    }
+    
+    private boolean esUsuarioValido(String usuario) {
+        return usuario.matches("^[a-zA-Z0-9._-]{3,20}$");
+    }
+    
+    public static boolean esCorreoValido(String correo) {
+        String regex = "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$";
+        Pattern patron = Pattern.compile(regex);
+        Matcher coincidencia = patron.matcher(correo);           
+        return coincidencia.matches();
+    }
+    
+    private boolean validarCampos() {
+        
+        //obtenemos los valores directamente
+        String usuario = txtUsuario.getText().trim();
+        String password = txtPassword.getText().trim();
+        String nombre = txtNombre.getText().trim();
+        String apellido = txtApellido.getText().trim();
+        String dni = txtDni.getText().trim();
+        String correo = txtCorreo.getText().trim();
+        
+        
+        if (txtUsuario.getText().trim().isEmpty() || txtPassword.getText().trim().isEmpty() ||  txtNombre.getText().trim().isEmpty() || 
+                txtApellido.getText().trim().isEmpty() || txtDni.getText().trim().isEmpty() ||  txtCorreo.getText().trim().isEmpty() ||
+                txtUsuario.getText().trim().isEmpty() || txtUsuario.getText().trim().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Todos los campos deben estar llenos");
+            return false;
+        }
+        if (txtDni.getText().length() != 8 || !txtDni.getText().matches("\\d{8}")) {
+            JOptionPane.showMessageDialog(this, "El DNI debe tener exactamente 8 dígitos.");
+            return false;
+        }
+        if (txtPassword.getText().length() != 8 || !txtPassword.getText().matches("\\d{8}")) {
+            JOptionPane.showMessageDialog(this, "La contraseña debe tener exactamente 8 dígitos.");
+            return false;
+        }
+        // Validar correo
+        if (!esCorreoValido(correo)) {
+            JOptionPane.showMessageDialog(this, "El correo ingresado no es válido.");
+            return false;
+        }
+        return true;
+    }
+    
+    private Alumno crearAlumnoDesdeFormulario() {
+        String usuario = txtUsuario.getText().trim();
+        String contraseña = txtPassword.getText().trim();
+        String nombres = txtNombre.getText().trim();
+        String apellidos = txtApellido.getText().trim();
+        String dni = txtDni.getText().trim();
+        String correo = txtCorreo.getText().trim();
+        String grado = String.valueOf(cmbGrado.getSelectedIndex());
+        
+        
+
+        Alumno nuevo = new Alumno(usuario, contraseña, nombres, apellidos, dni, correo, grado);
+        return nuevo;
+    }
+
+    
+    private void guardarAlumnoEnArchivo(Alumno alumno) {
+        try {
+            File carpeta = new File("Registro/Alumnos");
+            if (!carpeta.exists()) carpeta.mkdirs();
+
+            File archivo = new File(carpeta, alumno.getUsuario() + ".txt");
+            BufferedWriter writer = new BufferedWriter(new FileWriter(archivo));
+
+            writer.write("Usuario: " + alumno.getUsuario());
+            writer.newLine();
+            writer.write("Contraseña: " + alumno.getContraseña());
+            writer.newLine();
+            writer.write("Nombres: " + alumno.getNombre());
+            writer.newLine();
+            writer.write("Apellidos: " + alumno.getApellido());
+            writer.newLine();
+            writer.write("DNI: " + alumno.getDni());
+            writer.newLine();
+            writer.write("Correo: " + alumno.getCorreo());
+            writer.newLine();
+            writer.write("Grado: " + alumno.getGrado());
+            writer.newLine();
+
+            writer.close();
+            JOptionPane.showMessageDialog(this, "Alumno registrado correctamente.");
+            this.dispose();
+            Login log = new Login();
+            log.setVisible(true);
+        } catch (IOException e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(this, "Error al guardar: " + e.getMessage());
+        }
+    }
+    
+    
+    private void registrarAlumno() {
+        if (validarCampos()) {
+            Alumno alumno = crearAlumnoDesdeFormulario();
+            guardarAlumnoEnArchivo(alumno);
+            
+        }
+    }  
+    
+    
+   
+    public void habilitarBoton(){
+        // Si los siguientes campos no están completados no se activa el boton
+        if(!txtUsuario.getText().isEmpty() && !txtPassword.getText().isEmpty()
+                && !txtNombre.getText().isEmpty() && !txtApellido.getText().isEmpty() 
+                && !txtDni.getText().isEmpty() && !txtCorreo.getText().isEmpty()){
+            
+            //cuando se llenen todos los campos requeridos se desbloquea
+            btnCompletar.setEnabled(true);
+        }
+    }
+    
+    
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        jPanel1 = new javax.swing.JPanel();
+        Title = new javax.swing.JPanel();
+        exit = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        txtUsuario = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        btnCompletar = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        txtNombre = new javax.swing.JTextField();
+        txtApellido = new javax.swing.JTextField();
+        txtPassword = new javax.swing.JPasswordField();
+        jLabel2 = new javax.swing.JLabel();
+        txtDni = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        txtCorreo = new javax.swing.JTextField();
+        cmbGrado = new javax.swing.JComboBox<>();
+        jLabel9 = new javax.swing.JLabel();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Registro");
+        setUndecorated(true);
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        Title.setBackground(new java.awt.Color(31, 199, 136));
+        Title.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        Title.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                TitleMouseDragged(evt);
+            }
+        });
+        Title.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                TitleMousePressed(evt);
+            }
+        });
+        Title.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        exit.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        exit.setForeground(new java.awt.Color(255, 255, 255));
+        exit.setText("X");
+        exit.setToolTipText("");
+        exit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                exitMousePressed(evt);
+            }
+        });
+        Title.add(exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 10, 21, 30));
+
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Verdana", 1, 48)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("REGISTRO");
+        Title.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, -1, -1));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/home_48px_1.png"))); // NOI18N
+        Title.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, 60));
+
+        jPanel1.add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 140));
+
+        txtUsuario.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        txtUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtUsuarioActionPerformed(evt);
+            }
+        });
+        txtUsuario.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtUsuarioKeyReleased(evt);
+            }
+        });
+        jPanel1.add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 170, -1));
+
+        jLabel4.setText("Apellidos");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 110, -1));
+
+        jLabel5.setText("Usuario");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 90, -1));
+
+        btnCompletar.setText("Completar");
+        btnCompletar.setEnabled(false);
+        btnCompletar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCompletarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnCompletar, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 540, 170, 30));
+
+        jLabel6.setText("Contraseña");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 160, 110, -1));
+
+        jLabel7.setText("Nombres");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 110, -1));
+
+        txtNombre.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        txtNombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNombreActionPerformed(evt);
+            }
+        });
+        txtNombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtNombreKeyReleased(evt);
+            }
+        });
+        jPanel1.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 360, -1));
+
+        txtApellido.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        txtApellido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtApellidoActionPerformed(evt);
+            }
+        });
+        txtApellido.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtApellidoKeyReleased(evt);
+            }
+        });
+        jPanel1.add(txtApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, 360, -1));
+
+        txtPassword.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtPasswordKeyReleased(evt);
+            }
+        });
+        jPanel1.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 180, 160, -1));
+
+        jLabel2.setText("DNI");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, -1, -1));
+
+        txtDni.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        txtDni.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtDniActionPerformed(evt);
+            }
+        });
+        txtDni.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtDniKeyReleased(evt);
+            }
+        });
+        jPanel1.add(txtDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, 190, -1));
+
+        jLabel8.setText("Correo Electrónico");
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, -1, -1));
+
+        txtCorreo.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        txtCorreo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCorreoActionPerformed(evt);
+            }
+        });
+        txtCorreo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtCorreoKeyReleased(evt);
+            }
+        });
+        jPanel1.add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, 310, -1));
+
+        cmbGrado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11" }));
+        jPanel1.add(cmbGrado, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 490, -1, -1));
+
+        jLabel9.setText("Grado");
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 470, -1, -1));
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 594, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
+    
+       //configuro la función de cerrar el proyecto
+    private void configurarExit(){
+        exit.setText("X");
+        exit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+    }
+    private void exitMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitMousePressed
+        Login login = new Login();
+        this.setVisible(false);
+        login.setVisible(true);
+    }//GEN-LAST:event_exitMousePressed
+
+    private void TitleMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TitleMouseDragged
+        int x = evt.getXOnScreen();
+        int y = evt.getYOnScreen();
+        this.setLocation(x - px, y - py);
+    }//GEN-LAST:event_TitleMouseDragged
+    int px, py;
+    private void TitleMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TitleMousePressed
+        px = evt.getX();
+        py = evt.getY();
+    }//GEN-LAST:event_TitleMousePressed
+
+    private void txtUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtUsuarioActionPerformed
+
+    private void btnCompletarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCompletarActionPerformed
+        registrarAlumno();
+    }//GEN-LAST:event_btnCompletarActionPerformed
+
+    private void txtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNombreActionPerformed
+
+    private void txtApellidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtApellidoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtApellidoActionPerformed
+
+    private void txtUsuarioKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUsuarioKeyReleased
+        habilitarBoton();
+    }//GEN-LAST:event_txtUsuarioKeyReleased
+
+    private void txtNombreKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreKeyReleased
+        habilitarBoton();
+    }//GEN-LAST:event_txtNombreKeyReleased
+
+    private void txtApellidoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtApellidoKeyReleased
+        habilitarBoton();
+    }//GEN-LAST:event_txtApellidoKeyReleased
+
+    private void txtPasswordKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPasswordKeyReleased
+        habilitarBoton();
+    }//GEN-LAST:event_txtPasswordKeyReleased
+
+    private void txtDniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDniActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDniActionPerformed
+
+    private void txtCorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCorreoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCorreoActionPerformed
+
+    private void txtDniKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDniKeyReleased
+        habilitarBoton();
+    }//GEN-LAST:event_txtDniKeyReleased
+
+    private void txtCorreoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCorreoKeyReleased
+        habilitarBoton();
+    }//GEN-LAST:event_txtCorreoKeyReleased
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(CrearUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(CrearUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(CrearUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(CrearUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new CrearUsuario().setVisible(true);
+            }
+        });
+    }
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel Title;
+    private javax.swing.JButton btnCompletar;
+    private javax.swing.JComboBox<String> cmbGrado;
+    private javax.swing.JLabel exit;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField txtApellido;
+    private javax.swing.JTextField txtCorreo;
+    private javax.swing.JTextField txtDni;
+    private javax.swing.JTextField txtNombre;
+    private javax.swing.JPasswordField txtPassword;
+    private javax.swing.JTextField txtUsuario;
+    // End of variables declaration//GEN-END:variables
+}
+
+package Ejecutables;
+
+
+// Imports para DB
+
+/*
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import javax.swing.JOptionPane;}
+*/ //Detalles previos
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import javax.swing.*;
+import java.io.IOException;
+import java.util.List;
+import static javax.swing.JOptionPane.ERROR_MESSAGE;
+import entidad.*;
+
+
+
+/**
+ *
+ * @author Micha
+ */
+public class Login extends javax.swing.JFrame {
+
+    
+    public Login() {
+        
+        initComponents();
+        jPanel1.requestFocusInWindow();
+        this.setLocationRelativeTo(null);
+        
+    }
+    
+    
+    private void iniciarSesion() {
+        String username = txtUsuario.getText().trim();
+        String password = new String(txtPassword.getPassword()).trim();
+
+        File carpeta = new File("Registro/Alumnos");
+        File archivo = new File(carpeta, username + ".txt");
+
+        if (!archivo.exists()) {
+            JOptionPane.showMessageDialog(this, "Usuario o contraseña incorrectos.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(archivo))) {
+            String linea;
+            String usuario = "", pass = "", nombre = "", apellido = "", dni = "", correo = "", grado = "";
+            boolean loginExitoso = false;
+
+            while ((linea = reader.readLine()) != null) {
+                linea = linea.trim();
+
+                if (linea.startsWith("Usuario:")) {
+                    usuario = linea.split(":", 2)[1].trim();
+                } else if (linea.startsWith("Contraseña:")) {
+                    pass = linea.split(":", 2)[1].trim();
+                } else if (linea.startsWith("Nombres:")) {
+                    nombre = linea.split(":", 2)[1].trim();
+                } else if (linea.startsWith("Apellidos:")) {
+                    apellido = linea.split(":", 2)[1].trim();
+                } else if (linea.startsWith("DNI:")) {
+                    dni = linea.split(":", 2)[1].trim();
+                } else if (linea.startsWith("Correo:")) {
+                    correo = linea.split(":", 2)[1].trim();
+                } else if (linea.startsWith("Grado:")) {
+                    grado = linea.split(":", 2)[1].trim();
+                }
+            }
+
+            // Validar que todos los datos estén presentes
+            if (usuario.isEmpty() || pass.isEmpty() || nombre.isEmpty() || apellido.isEmpty() ||
+                dni.isEmpty() || correo.isEmpty() || grado.isEmpty()) {
+                JOptionPane.showMessageDialog(this, "Datos incompletos en el archivo de usuario.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+           // Verificar credenciales
+            if (usuario.equals(username) && pass.equals(password)) {
+                Alumno alumno = new Alumno(usuario, pass, nombre, apellido, dni, correo, grado);
+                Sesion.iniciarSesion(alumno);
+                loginExitoso = true;
+            }
+
+            if (loginExitoso) {
+                JOptionPane.showMessageDialog(this, "Inicio de sesión exitoso", "Información", JOptionPane.INFORMATION_MESSAGE);
+                Bitacora panel = new Bitacora();
+                panel.setVisible(true);
+                this.dispose();
+            } else {
+                JOptionPane.showMessageDialog(this, "Usuario o contraseña incorrectos.", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(this, "Error al leer el archivo. " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
+
+    
+    
+    // configurar la función de cerrar el programa
+    private void configurarExit(){
+        exit.setText("X");
+        exit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+    }
+    @SuppressWarnings("unchecked")
+    
+    
+    
+    
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        jPanel1 = new javax.swing.JPanel();
+        btnLogin = new javax.swing.JButton();
+        Title = new javax.swing.JPanel();
+        exit = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        txtUsuario = new javax.swing.JTextField();
+        lblPassword = new javax.swing.JLabel();
+        lblUsuario = new javax.swing.JLabel();
+        jSeparator2 = new javax.swing.JSeparator();
+        jButton2 = new javax.swing.JButton();
+        txtPassword = new javax.swing.JPasswordField();
+        showPass = new javax.swing.JCheckBox();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Login");
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setIconImage(getIconImage());
+        setUndecorated(true);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnLogin.setText("Ingresar");
+        btnLogin.setFocusable(false);
+        btnLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLoginActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 340, 90, 30));
+
+        Title.setBackground(new java.awt.Color(31, 199, 136));
+        Title.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        Title.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                TitleMouseDragged(evt);
+            }
+        });
+        Title.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                TitleMousePressed(evt);
+            }
+        });
+        Title.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        exit.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        exit.setForeground(new java.awt.Color(255, 255, 255));
+        exit.setText("X");
+        exit.setToolTipText("");
+        exit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                exitMousePressed(evt);
+            }
+        });
+        Title.add(exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(339, 6, 21, 30));
+
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Verdana", 1, 48)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Login");
+        Title.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 40, -1, -1));
+
+        jPanel1.add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 360, 140));
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 290, 200, 10));
+
+        txtUsuario.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        txtUsuario.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtUsuarioActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 180, 200, 30));
+
+        lblPassword.setText("Contraseña");
+        jPanel1.add(lblPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 230, 110, -1));
+
+        lblUsuario.setText("Usuario");
+        jPanel1.add(lblUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 160, 90, -1));
+        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 220, 200, 10));
+
+        jButton2.setText("Registrate");
+        jButton2.setFocusable(false);
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 340, 90, 30));
+
+        txtPassword.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        txtPassword.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jPanel1.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 252, 200, 30));
+
+        showPass.setBackground(new java.awt.Color(255, 255, 255));
+        showPass.setForeground(new java.awt.Color(0, 0, 0));
+        showPass.setText("Mostrar contraseña");
+        showPass.setFocusable(false);
+        showPass.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                showPassActionPerformed(evt);
+            }
+        });
+        jPanel1.add(showPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 310, -1, -1));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 393));
+
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
+        iniciarSesion();
+    }//GEN-LAST:event_btnLoginActionPerformed
+    // definir variables x & y para ventana
+    int px, py;    
+    private void txtUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtUsuarioActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        CrearUsuario cr = new CrearUsuario();
+        cr.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void TitleMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TitleMousePressed
+        px = evt.getX();
+        py = evt.getY();
+    }//GEN-LAST:event_TitleMousePressed
+
+    private void TitleMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TitleMouseDragged
+        int x = evt.getXOnScreen();
+        int y = evt.getYOnScreen();
+        this.setLocation(x - px, y - py);
+    }//GEN-LAST:event_TitleMouseDragged
+
+    private void exitMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitMousePressed
+        JOptionPane.showMessageDialog(this, "Project by José & Michael");
+        
+        System.exit(0);
+        
+    }//GEN-LAST:event_exitMousePressed
+
+    private void showPassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showPassActionPerformed
+        
+        if (showPass.isSelected()){
+            txtPassword.setEchoChar((char)0);
+            showPass.setText("Ocultar contraseña");
+        } else {
+            showPass.setText("Mostrar contraseña");
+        }
+    }//GEN-LAST:event_showPassActionPerformed
+
+    public static void main(String args[]) {
+        JPasswordField p = new JPasswordField();
+        p.setVisible(true);
+        
+        
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Login().setVisible(true);
+                
+            }
+        });
+        
+    }
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel Title;
+    private javax.swing.JButton btnLogin;
+    private javax.swing.JLabel exit;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JLabel lblPassword;
+    private javax.swing.JLabel lblUsuario;
+    private javax.swing.JCheckBox showPass;
+    private javax.swing.JPasswordField txtPassword;
+    private javax.swing.JTextField txtUsuario;
+    // End of variables declaration//GEN-END:variables
+}
+
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ */
+package Ejecutables;
+
+import javax.swing.JOptionPane;
+import entidad.*;
+import seguimiento.*;
+import javax.swing.Timer;
+
+/**
+ *
+ * @author Micha
+ */
+public class Perfil extends javax.swing.JFrame {
+
+    /**
+     * Creates new form Bitacora
+     */
+    public Perfil() {
+        initComponents();
+        jPanel1.requestFocusInWindow();
+        this.setLocationRelativeTo(null);
+        Timer timer = new Timer(1000, e -> {Alumno alumno = (Alumno) Sesion.getPersonaActual();
+            int porcentaje = alumno.getProgreso().getPorcentaje();
+            pbProgreso.setValue(porcentaje);
+        });
+        cargarDatos();
+    }
+
+    private void configurarExit(){
+        exit.setText("X");
+        exit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+    }
+    
+    
+    private void cargarDatos() {
+        Persona persona = Sesion.getPersonaActual();
+        
+        if (persona instanceof Alumno alumno) {
+            lblNombre.setText(alumno.getNombre());
+            lblApellido.setText(alumno.getApellido());
+            lblGrado.setText(String.valueOf(alumno.getGrado()));
+            lblCorreo.setText(alumno.getCorreo());
+            
+            
+            int porcentaje = alumno.getProgreso().getPorcentaje();
+            pbProgreso.setValue(porcentaje);
+        } else {
+            JOptionPane.showMessageDialog(this, "No hay un alumno activo en sesión.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+        
+    }
+    
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        jLabel5 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        Title = new javax.swing.JPanel();
+        exit = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        lblNombre = new javax.swing.JLabel();
+        lblApellido = new javax.swing.JLabel();
+        lblGrado = new javax.swing.JLabel();
+        lblCorreo = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jToggleButton1 = new javax.swing.JToggleButton();
+        jPanel4 = new javax.swing.JPanel();
+        jPanel5 = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        pbMate = new javax.swing.JProgressBar();
+        pbCiencias = new javax.swing.JProgressBar();
+        pbLetras = new javax.swing.JProgressBar();
+        jLabel8 = new javax.swing.JLabel();
+        progresoMate = new javax.swing.JLabel();
+        progresoCiencias = new javax.swing.JLabel();
+        progresoLetras = new javax.swing.JLabel();
+        pbProgreso = new javax.swing.JProgressBar();
+        jLabel7 = new javax.swing.JLabel();
+
+        jLabel5.setText("jLabel5");
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setFocusable(false);
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        Title.setBackground(new java.awt.Color(58, 158, 197));
+        Title.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        Title.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                TitleMouseDragged(evt);
+            }
+        });
+        Title.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                TitleMousePressed(evt);
+            }
+        });
+        Title.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        exit.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        exit.setForeground(new java.awt.Color(255, 255, 255));
+        exit.setText("X");
+        exit.setToolTipText("");
+        exit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                exitMousePressed(evt);
+            }
+        });
+        Title.add(exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 10, 21, 30));
+
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Verdana", 1, 48)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Perfil de usuario");
+        Title.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, -1));
+
+        jPanel1.add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 810, 140));
+
+        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel2.setOpaque(false);
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel3.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        jLabel3.setText("Nombre");
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, -1, -1));
+
+        jLabel4.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        jLabel4.setText("Apellidos");
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, -1));
+
+        jLabel2.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        jLabel2.setText("Grado");
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, -1, -1));
+
+        jLabel6.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        jLabel6.setText("Correo");
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, -1, -1));
+
+        lblNombre.setForeground(new java.awt.Color(0, 0, 0));
+        lblNombre.setText("NOMBRE");
+        jPanel2.add(lblNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 30, -1, -1));
+
+        lblApellido.setForeground(new java.awt.Color(0, 0, 0));
+        lblApellido.setText("APELLIDOS");
+        jPanel2.add(lblApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 70, -1, -1));
+
+        lblGrado.setForeground(new java.awt.Color(0, 0, 0));
+        lblGrado.setText("GRADO");
+        jPanel2.add(lblGrado, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, -1, -1));
+
+        lblCorreo.setForeground(new java.awt.Color(0, 0, 0));
+        lblCorreo.setText("CORREO");
+        jPanel2.add(lblCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 150, -1, -1));
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 310, 190));
+
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Sugerencias", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(0, 0, 0))); // NOI18N
+        jPanel3.setOpaque(false);
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jToggleButton1.setBackground(new java.awt.Color(255, 255, 255));
+        jToggleButton1.setForeground(new java.awt.Color(0, 0, 0));
+        jToggleButton1.setText("Mostrar resultados académicos");
+        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton1ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 200, -1));
+
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, 310, 220));
+
+        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Calificacion", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(0, 0, 0))); // NOI18N
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 360, 450, 220));
+
+        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Progreso Académico", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(0, 0, 0))); // NOI18N
+        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel9.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel9.setText("Ciencias");
+        jPanel5.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, -1, -1));
+
+        jLabel10.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel10.setText("Letras");
+        jPanel5.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, -1));
+        jPanel5.add(pbMate, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 30, 220, 20));
+        jPanel5.add(pbCiencias, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 70, 220, 20));
+        jPanel5.add(pbLetras, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, 220, 20));
+
+        jLabel8.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel8.setText("Matemática");
+        jPanel5.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, -1, -1));
+
+        progresoMate.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        progresoMate.setForeground(new java.awt.Color(0, 0, 0));
+        progresoMate.setText("50%");
+        jPanel5.add(progresoMate, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 30, -1, -1));
+
+        progresoCiencias.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        progresoCiencias.setForeground(new java.awt.Color(0, 0, 0));
+        progresoCiencias.setText("50%");
+        jPanel5.add(progresoCiencias, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 70, -1, -1));
+
+        progresoLetras.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        progresoLetras.setForeground(new java.awt.Color(0, 0, 0));
+        progresoLetras.setText("50%");
+        jPanel5.add(progresoLetras, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 110, -1, -1));
+        jPanel5.add(pbProgreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, 300, 20));
+
+        jLabel7.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel7.setText("Progreso General");
+        jPanel5.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, -1, -1));
+
+        jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 150, 450, 200));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 810, 590));
+
+        getAccessibleContext().setAccessibleName("Bitacora del Viajero");
+
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
+
+    
+    int px, py;
+    private void exitMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitMousePressed
+        this.dispose();
+
+    }//GEN-LAST:event_exitMousePressed
+
+    private void TitleMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TitleMouseDragged
+        int x = evt.getXOnScreen();
+        int y = evt.getYOnScreen();
+        this.setLocation(x - px, y - py);
+    }//GEN-LAST:event_TitleMouseDragged
+
+    private void TitleMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TitleMousePressed
+        px = evt.getX();
+        py = evt.getY();
+    }//GEN-LAST:event_TitleMousePressed
+
+    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jToggleButton1ActionPerformed
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(Perfil.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Perfil.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Perfil.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Perfil.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Perfil().setVisible(true);
+            }
+        });
+    }
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel Title;
+    private javax.swing.JLabel exit;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JToggleButton jToggleButton1;
+    private javax.swing.JLabel lblApellido;
+    private javax.swing.JLabel lblCorreo;
+    private javax.swing.JLabel lblGrado;
+    private javax.swing.JLabel lblNombre;
+    private javax.swing.JProgressBar pbCiencias;
+    private javax.swing.JProgressBar pbLetras;
+    private javax.swing.JProgressBar pbMate;
+    private javax.swing.JProgressBar pbProgreso;
+    private javax.swing.JLabel progresoCiencias;
+    private javax.swing.JLabel progresoLetras;
+    private javax.swing.JLabel progresoMate;
+    // End of variables declaration//GEN-END:variables
+}
+
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
+ */
+package EjecutarJuego;
+
+/**
+ *
+ * @author Micha
+ */
+public class juegoInicio extends javax.swing.JPanel {
+
+    /**
+     * Creates new form juegoInicio
+     */
+    public juegoInicio() {
+        initComponents();
+    }
+
+    /**
+     * This method is called from within the constructor to initialize the form. WARNING: Do NOT modify this code. The content of this method is always regenerated by the Form Editor.
+     */
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1270, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 768, Short.MAX_VALUE)
+        );
+    }// </editor-fold>//GEN-END:initComponents
+
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    // End of variables declaration//GEN-END:variables
+}
+
+package entidad;
+
+import java.util.List;
+import estudio.Curso;
+import seguimiento.*;
+
+public class Alumno extends Persona {
+
+    
+    private Progreso progreso;
+    private Bitacora bitacora;
+    private String id;
+    private List<Double> notas;
+    private Curso cursoActual;
+    private int grado;
+
+
+        // constructor para Alumno en base de Persona [Clase padre]
+        public Alumno(String usuario,
+                String contraseĆ±a, 
+                String nombre, 
+                String apellido, 
+                String dni, 
+                String correo, 
+                String grado) {
+        super(nombre, apellido, dni, correo, usuario, contraseĆ±a);
+        this.grado = Integer.parseInt(grado);
+        this.progreso = new Progreso();
+        this.bitacora = new Bitacora();
+        }
+        
+        public Progreso getProgreso(){
+            return progreso;
+        }
+        public int getGrado() {
+            return grado;
+        }
+	public List<Double> consultarNotas() {
+		return null;
+	}
+	public void registrarse(Curso curso) {
+
+	}
+
+	public double obtenerPromedio() {
+		return 0;
+	}
+
+}
+
+package entidad;
+
+public class LocalDate {
+
+}
+
+package entidad;
+
+public abstract class Persona {
+
+	protected String nombre;
+	protected String apellido;
+	protected String dni;
+	protected String correo;
+	protected String usuario;
+	protected String contraseña;
+        
+        public Persona(String nombre, String apellido, String dni, String correo, String usuario, String contraseña) {
+            this.nombre = nombre;
+            this.apellido = apellido;
+            this.dni = dni;
+            this.correo = correo;
+            this.usuario = usuario;
+            this.contraseña = contraseña;
+        }
+
+    public String getNombre() {
+        return nombre;
+    }
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+    public String getApellido() {
+        return apellido;
+    }
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+    public String getDni() {
+        return dni;
+    }
+    public void setDni(String dni) {
+        this.dni = dni;
+    }
+    public String getCorreo() {
+        return correo;
+    }
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
+    public String getUsuario() {
+        return usuario;
+    }
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
+    }
+    public String getContraseña() {
+        return contraseña;
+    }
+    public void setContraseña(String contrasena) {
+        this.contraseña = contrasena;
+    }
+        
+        
+
+}
+
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package entidad;
+
+/**
+ *
+ * @author Micha
+ */
+public class Sesion {
+    private static Persona personaActual;
+    
+    public static void iniciarSesion(Persona persona) {
+        personaActual = persona;
+    }
+    
+    public static Persona getPersonaActual() {
+        return personaActual;
+    }
+    
+    public static void cerrarSesion() {
+        personaActual = null;
+    }
+    
+    public static boolean sesionActiva() {
+        return personaActual != null;
+    }
+}
+
+package entidad;
+
+
+import java.util.List;
+
+public class Usuario {
+    private Persona persona;
+    
+    public Usuario(Persona persona) {
+        this.persona = persona;
+    }
+    
+    public Persona getPersona() { 
+        return persona;
+    }
+    
+    public boolean verificarCredenciales(String usuario, String contraseña) {
+        return persona.usuario.equals(usuario) && persona.contraseña.equals(contraseña);
+    }
+}
+
+
+/*
+	private int grado;
+	private Enum(Primaria, Secundaria) nivelEducativo;
+	private Progreso progreso;
+	private Mundo mundoActual;
+	private List<Bitacora> historialBitacora;
+	private List<Nota> notas;
+	public void reoslverDesafio() {}
+	public void avanzarNivel() {}
+	public void verLeccion() {}
+	public void registrarProgreso() {}
+	public void escribirNota() {}
+	public void consultarNota() {}
+    
+    */
+
+package estudio;
+
+public enum Categoria {
+
+	;
+
+	private int Letras;
+
+	private int Ciencias;
+
+	private int Matematicas;
+
+	private Tema tema;
+
+}
+
+package estudio;
+
+import java.util.List;
+import estudio.Curso;
+
+public class Contenido {
+
+	private String descripcion;
+
+	private List<String> unidades;
+
+	private Curso curso;
+
+}
+package estudio;
+
+import acciones.Calculable;
+import Juego.iJugable;
+import entidad.Alumno;
+import seguimiento.Registro;
+import java.util.Collection;
+import estudio.Contenido;
+import java.util.List;
+
+public abstract class Curso implements Calculable, iJugable {
+
+	private String nombre;
+	private String tema;
+	private int sesionesPorSemana;
+	private String contenido;
+	private Alumno alumno;
+	private Registro registro;
+	// private Collection<Tema> tema; ?
+	// private Contenido contenido; ---- Esto ya lo definiste arriba
+
+	/**
+	 *  
+	 */
+	public void agregarAlumno(Alumno a) {
+
+	}
+
+	/**
+	 *  
+	 */
+	public void eliminarAlumno(String id) {
+
+	}
+
+	public List<Alumno> listarAlumnos() {
+		return null;
+	}
+
+	public String mostrarContenido() {
+		return null;
+	}
+
+
+	/**
+	 * @see acciones.Calculable#calcularNotaIndividual(entidad.Alumno)
+	 * 
+	 *  
+	 */
+	public double calcularNotaIndividual(Alumno alumno) {
+		return 0;
+	}
+
+
+	/**
+	 * @see acciones.Calculable#calcularPromedio()
+	 * 
+	 *  
+	 */
+	public double calcularPromedio() {
+		return 0;
+	}
+
+
+	/**
+	 * @see acciones.Calculable#calcularMaximaNota()
+	 */
+	public double calcularMaximaNota() {
+		return 0;
+	}
+
+
+	/**
+	 * @see acciones.Calculable#calcularMinimaNota()
+	 */
+	public double calcularMinimaNota() {
+		return 0;
+	}
+
+
+	/**
+	 * @see acciones.Calculable#listarNotas()
+	 */
+	public List<Double> listarNotas() {
+		return null;
+	}
+
+}
+
+package estudio;
+
+import estudio.*;
+
+public class Tema {
+
+	private String nombre;
+
+	private Categoria categoria;
+
+	private Curso curso;
+
+}
+
+package Juego;
+
+import entidad.*;
+
+public class fPerfil {
+
+	private Alumno alumno;
+
+}
+
+
+package Juego;
+
+public interface iJugable {
+
+}
+
+package Juego;
+
+import java.util.List;
+import acciones.*;
+import Juego.*;
+
+public class Juego implements iJugable {
+
+	private Puntajes Puntajes;
+	private List<Respuesta> respuesta;
+	private String nombreJugador;
+	private int rondaActual;
+	private Puntajes puntajes;
+	// private jugador Jugador; aun da problemas
+
+	/**
+	 *  
+	 */
+	public void iniciarJuego() {
+
+	}
+
+	/**
+	 *  
+	 */
+	public void jugarRonda() {
+
+	}
+
+	/**
+	 *  
+	 */
+	public void finalizarJuego() {
+
+	}
+
+}
+
+package juego;
+
+import Juego.Juego;
+import entidad.Alumno;
+
+public class jugador extends Alumno {
+
+	private Juego juego;
+
+    public jugador(String usuario, String contraseĆ±a, String nombre, String apellido, String dni, String correo, String grado) {
+        
+        super(usuario,
+                contraseĆ±a, 
+                nombre, 
+                apellido, 
+                dni, 
+                correo, 
+                grado);
+    }
+
+}
+
+package seguimiento;
+
+import java.util.ArrayList;
+import java.util.List;
+import seguimiento.*;
+
+
+
+
+public class Bitacora {
+    private List<String> decisionesTomadas;
+    private List<LocalDateTime> tiemposAcceso;
+    
+    public Bitacora() {
+        decisionesTomadas = new ArrayList<>();
+        tiemposAcceso = new ArrayList<>();
+    }
+    /*
+    public void registrarDecion(String decisiones) {
+        decisionesTomadas.add(decision);
+        tiemposAcceso.add(LocalDateTime.now());
+    }*/
+
+	private LocalDateTime fechaHora;
+
+	private String descripcion;
+
+	private String accion;
+
+	public void registrarEntrada() {
+
+	}
+
+}
+
+package seguimiento;
+
+import java.util.Date;
+
+public class Decision {
+    private String decision;
+    
+    public Decision(){
+        this.decision = decision;
+    }
+
+	private Date fecha;
+
+	private String descripcion;
+
+	private String impacto;
+
+	public String mostrarImpacto() {
+		return null;
+	}
+
+}
+
+package seguimiento;
+
+public class LocalDate {
+
+}
+
+package seguimiento;
+public class Progreso {
+    private int porcentajeAvance;
+    private int nivelActual;
+    private int nivelMaximo;
+    private int porcentaje;
+    
+    public Progreso() {
+        this.porcentajeAvance = 0;
+        this.nivelActual = 0;
+        this.nivelMaximo = 100;
+        this.porcentaje = 0;
+    }
+    
+    public void avanzarNivel() {
+        nivelActual++;
+        porcentajeAvance += 5;
+    }
+
+    public int getPorcentajeAvance() {
+        if (nivelMaximo == 0) return 0;
+        return (nivelActual * 100) / nivelMaximo;
+    }
+
+    public void setPorcentajeAvance(int porcentajeAvance) {
+        this.porcentajeAvance = porcentajeAvance;
+    }
+
+    public int getNivelMaximo() {
+        return nivelMaximo;
+    }
+
+    public void setNivelMaximo(int nivelMaximo) {
+        this.nivelMaximo = nivelMaximo;
+    }
+
+    public int getPorcentaje() {
+        return porcentaje;
+    }
+
+    public void setPorcentaje(int porcentaje) {
+        this.porcentaje = porcentaje;
+    }
+
+    public int getNivelActual() {
+        return nivelActual;
+    }
+
+    public void setNivelActual(int nivelActual) {
+        this.nivelActual = nivelActual;
+    }
+
+    public int getNivelesCompletados() {
+        return nivelesCompletados;
+    }
+
+    public void setNivelesCompletados(int nivelesCompletados) {
+        this.nivelesCompletados = nivelesCompletados;
+    }
+
+    public double getProcentajeCurso() {
+        return procentajeCurso;
+    }
+
+    public void setProcentajeCurso(double procentajeCurso) {
+        this.procentajeCurso = procentajeCurso;
+    }
+
+    public double getTiempoEstudioAcumulado() {
+        return tiempoEstudioAcumulado;
+    }
+
+    public void setTiempoEstudioAcumulado(double tiempoEstudioAcumulado) {
+        this.tiempoEstudioAcumulado = tiempoEstudioAcumulado;
+    }
+    
+    
+    
+    
+
+	private int nivelesCompletados;
+
+	private double procentajeCurso;
+
+	private double tiempoEstudioAcumulado;
+
+	public void actualizarProgreso(double nuevoPorcentaje) {
+
+	}
+
+	public void reiniciarProgreso() {
+
+	}
+
+}
+
+package seguimiento;
+
+import entidad.LocalDate;
+import estudio.Curso;
+import entidad.Alumno;
+
+public class Registro {
+
+	private LocalDate fecha;
+
+	private Curso curso;
+
+	private Alumno alumno;
+
+	private double nota;
+
+	public void guardarNota() {
+
+	}
+
+	public void buscarNotasPorAlumno(String id) {
+
+	}
+
+	public void calcularPromedioCurso() {
+
+	}
+
+}

@@ -72,6 +72,18 @@ public class Perfil extends javax.swing.JFrame {
         lblGrado = new javax.swing.JLabel();
         lblCorreo = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
+        jToggleButton1 = new javax.swing.JToggleButton();
+        jPanel4 = new javax.swing.JPanel();
+        jPanel5 = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        pbMate = new javax.swing.JProgressBar();
+        pbCiencias = new javax.swing.JProgressBar();
+        pbLetras = new javax.swing.JProgressBar();
+        jLabel8 = new javax.swing.JLabel();
+        progresoMate = new javax.swing.JLabel();
+        progresoCiencias = new javax.swing.JLabel();
+        progresoLetras = new javax.swing.JLabel();
         pbProgreso = new javax.swing.JProgressBar();
         jLabel7 = new javax.swing.JLabel();
 
@@ -156,16 +168,71 @@ public class Perfil extends javax.swing.JFrame {
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 310, 190));
 
-        jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Sugerencias", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(0, 0, 0))); // NOI18N
         jPanel3.setOpaque(false);
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel3.add(pbProgreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 270, 20));
+
+        jToggleButton1.setBackground(new java.awt.Color(255, 255, 255));
+        jToggleButton1.setForeground(new java.awt.Color(0, 0, 0));
+        jToggleButton1.setText("Mostrar resultados académicos");
+        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton1ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 200, -1));
+
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, 310, 220));
+
+        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Calificacion", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(0, 0, 0))); // NOI18N
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 360, 450, 220));
+
+        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Progreso Académico", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(0, 0, 0))); // NOI18N
+        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel9.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel9.setText("Ciencias");
+        jPanel5.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, -1, -1));
+
+        jLabel10.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel10.setText("Letras");
+        jPanel5.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, -1));
+        jPanel5.add(pbMate, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 30, 220, 20));
+        jPanel5.add(pbCiencias, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 70, 220, 20));
+        jPanel5.add(pbLetras, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, 220, 20));
+
+        jLabel8.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel8.setText("Matemática");
+        jPanel5.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, -1, -1));
+
+        progresoMate.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        progresoMate.setForeground(new java.awt.Color(0, 0, 0));
+        progresoMate.setText("50%");
+        jPanel5.add(progresoMate, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 30, -1, -1));
+
+        progresoCiencias.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        progresoCiencias.setForeground(new java.awt.Color(0, 0, 0));
+        progresoCiencias.setText("50%");
+        jPanel5.add(progresoCiencias, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 70, -1, -1));
+
+        progresoLetras.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        progresoLetras.setForeground(new java.awt.Color(0, 0, 0));
+        progresoLetras.setText("50%");
+        jPanel5.add(progresoLetras, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 110, -1, -1));
+        jPanel5.add(pbProgreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, 300, 20));
 
         jLabel7.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        jLabel7.setText("Progreso");
-        jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
+        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel7.setText("Progreso General");
+        jPanel5.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, -1, -1));
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 310, 210));
+        jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 150, 450, 200));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 810, 590));
 
@@ -191,6 +258,10 @@ public class Perfil extends javax.swing.JFrame {
         px = evt.getX();
         py = evt.getY();
     }//GEN-LAST:event_TitleMousePressed
+
+    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jToggleButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -234,19 +305,31 @@ public class Perfil extends javax.swing.JFrame {
     private javax.swing.JPanel Title;
     private javax.swing.JLabel exit;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JLabel lblApellido;
     private javax.swing.JLabel lblCorreo;
     private javax.swing.JLabel lblGrado;
     private javax.swing.JLabel lblNombre;
+    private javax.swing.JProgressBar pbCiencias;
+    private javax.swing.JProgressBar pbLetras;
+    private javax.swing.JProgressBar pbMate;
     private javax.swing.JProgressBar pbProgreso;
+    private javax.swing.JLabel progresoCiencias;
+    private javax.swing.JLabel progresoLetras;
+    private javax.swing.JLabel progresoMate;
     // End of variables declaration//GEN-END:variables
 }
